@@ -1,0 +1,18 @@
+.cardContainer {
+    position: relative;
+    background: rgba(9, 53, 123, 0.9);
+    height: auto;
+    padding: 10px;
+}
+
+.body {
+    color: #fff;
+}
+
+.lg {
+    font-size: 24px;
+}
+
+.sm {
+    font-size: 18px;
+}
