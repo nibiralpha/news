@@ -24,17 +24,7 @@ function Search() {
 
     useEffect(() => {
         getData()
-    }, [sort])
-
-    useEffect(() => {
-        if (timer != null) {
-            clearTimeout(timer)
-        }
-
-        timer = setTimeout(() => {
-            getData()
-        }, 1000);
-    }, [search])
+    }, [sort, search])
 
     const getData = async () => {
         setLoading(true)
@@ -89,7 +79,7 @@ function Search() {
                     dataLength={data.results?.length}
                     next={fetchMore}
                     hasMore={true}
-                    loader={<h4>Loading...</h4>}
+                    loader={''}
                     endMessage={
                         <p style={{ textAlign: 'center' }}>
                             No more results found

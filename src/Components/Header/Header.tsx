@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchInput from '../SearchInput/SearchInput';
 import styles from './Header.module.css'
@@ -19,18 +19,22 @@ const Header = (props: Props) => {
     let timer: any = null;
 
     const onChangeSearch = (e: string) => {
-        // setSearchInput(e)
-        dispatch(setQuery(e))
+        setSearchInput(e)
+        applySearchDebounce(e)
+    }
+
+    const applySearchDebounce = useCallback((e: any) => {
+        
         if (timer !== undefined) {
             clearTimeout(timer)
         }
 
         timer = setTimeout(() => {
             dispatch(setQuery(e))
-
             navigate(`/search`)
         }, 1000);
-    }
+    }, [])
+
 
     return (
         <div>
@@ -40,7 +44,7 @@ const Header = (props: Props) => {
                         <Link to="/"> <img src='/Logo_White.png'></img></Link>
                     </div>
                     <div className={styles.searchArea}>
-                        <SearchInput value={search} onChangeValue={(val) => { onChangeSearch(val) }} />
+                        <SearchInput value={searchINput} onChangeValue={(val) => { onChangeSearch(val) }} />
                     </div>
                 </div>
             </div>

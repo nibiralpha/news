@@ -17,7 +17,7 @@ const SearchInput = (props: Props) => {
 
     return (
         <>
-            <div className={styles.wrap} ref={ref}>
+            <div className={styles.wrap}>
                 <input value={value} onChange={(e) => onChangeValue(e.target.value)} autoComplete="off" id="search" type="text" placeholder="Search all news ?" />
                 <input id="search_submit" type="submit" />
             </div>
