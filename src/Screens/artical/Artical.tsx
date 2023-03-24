@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom';
 import moment from 'moment'
 import 'moment-timezone';
 import Loading from '../../Components/Loading/Loading';
-import Search from '../../Components/Search/Search';
 
 const defaultState = {
     status: '',
@@ -53,10 +52,6 @@ function Artical() {
 
     if (loading) {
         return (<div><Loading /></div>)
-    }
-
-    if (search != "") {
-        return (<Search />)
     }
 
     return (

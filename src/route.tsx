@@ -7,6 +7,7 @@ import Artical from "./Screens/artical/Artical";
 import Layout from './Layout';
 import store from './Store/store';
 import ScrollToTop from './ScrollTop/ScrollTop';
+import Search from './Screens/Search/Search';
 
 const AppRoute = () => {
 
@@ -17,6 +18,7 @@ const AppRoute = () => {
                 <Layout>
                     <Routes>
                         <Route path='/' element={<Home />} />
+                        <Route path='/search' element={<Search />} />
                         <Route path='/artical/:id' element={<Artical />} />
                     </Routes>
                 </Layout>

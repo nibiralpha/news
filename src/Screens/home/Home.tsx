@@ -61,10 +61,6 @@ function Home() {
         return (<div><Loading /></div>)
     }
 
-    if (search != "") {
-        return (<Search />)
-    }
-
     return (
         <>
             <>

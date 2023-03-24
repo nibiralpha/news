@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from "react";
+import { isMobile } from "../Utils/helper";
 
 const useOnClickOutside = (ref: any, handler: any) => {
+
     useEffect(
         () => {
             const listener = (event: any) => {
                 // Do nothing if clicking ref's element or descendent elements
-                if (!ref.current || ref.current.contains(event.target) || event.target.id == "standard-select") {
+                
+                if (!ref.current || ref.current.contains(event.target) || event.target.id == "standard-select" || isMobile.any()) {
                     return;
                 }
                 handler(event);
