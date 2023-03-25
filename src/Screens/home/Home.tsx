@@ -32,7 +32,7 @@ const defaultState = {
 function Home() {
     const dispatch = useDispatch()
     const sort = useSelector((state: any) => state.searchSlice.sort)
-    const [loading, setLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(true)
 
     const [news, setNews] = useState<Data>(
         {
