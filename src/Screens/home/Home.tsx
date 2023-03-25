@@ -58,14 +58,14 @@ function Home() {
 
 
     if (loading) {
-        return (<div><Loading /></div>)
+        return (<div className='container'><Loading /></div>)
     }
 
     return (
         <>
             <>
                 <div className="App">
-                    <div className={`mb-30 mt-50 flex ${styles.filterArea}`}>
+                    <div className={`mb-30 mt-50 flex filter-area`}>
                         <div>
                             <h1>Top stories</h1>
                         </div>
@@ -75,7 +75,7 @@ function Home() {
                     </div>
                     <div className='row'>
 
-                        <div className={`col-6 col-sm-12 ${styles.topNews}`}>
+                        <div className={`col-6 col-sm-12 top-news`}>
                             <Card barColor='green'>
                                 <NewsCard
                                     id={news.topNews?.results[0]?.id}
@@ -90,7 +90,7 @@ function Home() {
                         <div className='col-6 col-sm-12'>
                             <div className='row'>
 
-                                <div className={`col-6 ${styles.mainSectionGrid}`}>
+                                <div className={`col-6 main-section-grid`}>
                                     <Card barColor='red'>
                                         <NewsCard
                                             overlayStyle={{ minHeight: "106px" }}
@@ -103,7 +103,7 @@ function Home() {
                                     </Card>
                                 </div>
 
-                                <div className={`col-6 ${styles.mainSectionGrid}`}>
+                                <div className={`col-6 main-section-grid`}>
                                     <Card barColor='amber'>
                                         <NewsCard
                                             overlayStyle={{ minHeight: "106px" }}
@@ -116,7 +116,7 @@ function Home() {
                                     </Card>
                                 </div>
 
-                                <div className={`col-6 ${styles.mainSectionGrid}`}>
+                                <div className={`col-6 main-section-grid`}>
                                     <Card barColor='blue'>
                                         <TitleCard
                                             id={news.topNews?.results[3]?.id}
@@ -127,7 +127,7 @@ function Home() {
                                     </Card>
                                 </div>
 
-                                <div className={`col-6 ${styles.mainSectionGrid}`}>
+                                <div className={`col-6 main-section-grid`}>
                                     <Card barColor='green'>
                                         <TitleCard
                                             id={news.topNews?.results[4]?.id}
@@ -143,7 +143,7 @@ function Home() {
                     </div>
 
 
-                    <div className={`row ${styles.categoriesSection}`}>
+                    <div className={`row categories-section`}>
                         {news.topNews.results.slice(5, 8).map((item: NewsModel) => {
                             return <div className='col-4 col-8-sm-12'>
                                 <Card barColor='red'>
@@ -162,7 +162,7 @@ function Home() {
                     </div>
 
                     <div className='mb-30 mt-30'><h1>Sports</h1></div>
-                    <div className={`row ${styles.categoriesSection}`}>
+                    <div className={`row categories-section`}>
                         {news.sports.results.map((item: NewsModel) => {
                             return <div className='col-4 col-8-sm-12'>
                                 <Card barColor='red'>

@@ -80,7 +80,7 @@ function Search() {
 
     return (
         <div className="App">
-            <div className={`mb-30 mt-50 flex ${styles.filterArea}`}>
+            <div className={`mb-30 mt-50 flex filter-area`}>
                 <div>
                     <h1>Search Results</h1>
                     {!loading && data.results?.length == 0 && <div className='mt-20 size-18 '>No serach results found</div>}
@@ -103,7 +103,7 @@ function Search() {
                         </p>
                     }
                 >
-                    <div className={`row ${styles.categoriesSection}`}>
+                    <div className={`row categories-section`}>
                         {data.results?.map((item: NewsModel) => {
                             return <div className='col-4 col-8-sm-12'>
                                 <Card barColor='red'>
