@@ -18,8 +18,9 @@ const Header = (props: Props) => {
 
     const onChangeSearch = (e: string) => {
         dispatch(setQuery(e))
+        navigate(`/search`)
         // setTimeout(() => {
-        navigateRoute();
+        // navigateRoute();
         // }, 1000);
 
     }

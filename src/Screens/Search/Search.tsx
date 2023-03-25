@@ -21,16 +21,16 @@ function Search() {
     const [page, setPage] = useState<number>(1)
 
     let timer: any = null;
+
     const searchInputVal = useRef(search)
     searchInputVal.current = search
 
-    useEffect(() => {
-        getData()
-    }, [sort])
+    const sortInputVal = useRef(sort)
+    sortInputVal.current = sort
 
     useEffect(() => {
         applySearchDebounce()
-    }, [search])
+    }, [search, sort])
 
     const applySearchDebounce = useCallback(() => {
         if (timer !== undefined) {
@@ -49,10 +49,10 @@ function Search() {
             {
                 section: 'news',
                 q: searchInputVal.current,
-                'order-by': sort,
+                'order-by': sortInputVal.current,
                 'show-fields': 'thumbnail',
                 'page-size': 15,
-                page: 1
+                page: page
             }
         );
         dispatch(getTopNewsSuccess(news))
@@ -63,8 +63,8 @@ function Search() {
         let newNes = await getNews(
             {
                 section: 'news',
-                q: search,
-                'order-by': sort,
+                q: searchInputVal.current,
+                'order-by': sortInputVal.current,
                 'show-fields': 'thumbnail',
                 'page-size': 15,
                 page: page + 1
