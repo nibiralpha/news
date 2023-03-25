@@ -13,28 +13,30 @@ const Header = (props: Props) => {
     const { style } = props
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const [searchINput, setSearchInput] = useState<string>("")
     const search = useSelector((state: any) => state.searchSlice.query)
-
     let timer: any = null;
 
     const onChangeSearch = (e: string) => {
-        setSearchInput(e)
-        applySearchDebounce(e)
+        dispatch(setQuery(e))
+        // setTimeout(() => {
+        navigateRoute();
+        // }, 1000);
+
     }
 
-    const applySearchDebounce = useCallback((e: any) => {
-        
+    const navigateRoute = useCallback(() => {
+
         if (timer !== undefined) {
             clearTimeout(timer)
         }
-
         timer = setTimeout(() => {
-            dispatch(setQuery(e))
             navigate(`/search`)
         }, 1000);
     }, [])
 
+    const onClickOutside = () => {
+        dispatch(setQuery(""));
+    }
 
     return (
         <div>
@@ -44,7 +46,7 @@ const Header = (props: Props) => {
                         <Link to="/"> <img src='/Logo_White.png'></img></Link>
                     </div>
                     <div className={styles.searchArea}>
-                        <SearchInput value={searchINput} onChangeValue={(val) => { onChangeSearch(val) }} />
+                        <SearchInput onClickOutside={onClickOutside} value={search} onChangeValue={(val) => { onChangeSearch(val) }} />
                     </div>
                 </div>
             </div>

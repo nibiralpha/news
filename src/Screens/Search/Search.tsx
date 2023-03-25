@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './Search.module.css';
 import { getNews } from '../../Service/News';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,17 +21,34 @@ function Search() {
     const [page, setPage] = useState<number>(1)
 
     let timer: any = null;
+    const searchInputVal = useRef(search)
+    searchInputVal.current = search
 
     useEffect(() => {
         getData()
-    }, [sort, search])
+    }, [sort])
+
+    useEffect(() => {
+        applySearchDebounce()
+    }, [search])
+
+    const applySearchDebounce = useCallback(() => {
+        if (timer !== undefined) {
+            clearTimeout(timer)
+        }
+
+        timer = setTimeout(() => {
+            getData()
+        }, 1000);
+    }, [])
 
     const getData = async () => {
+
         setLoading(true)
         let news = await getNews(
             {
                 section: 'news',
-                q: search,
+                q: searchInputVal.current,
                 'order-by': sort,
                 'show-fields': 'thumbnail',
                 'page-size': 15,
