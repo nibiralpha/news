@@ -31,7 +31,6 @@ const defaultState = {
 
 function Home() {
     const dispatch = useDispatch()
-    const search = useSelector((state: any) => state.searchSlice.query)
     const sort = useSelector((state: any) => state.searchSlice.sort)
     const [loading, setLoading] = useState<boolean>(false)
 
@@ -182,7 +181,6 @@ function Home() {
                 </div >
             </>
         </>
-
     );
 }
 

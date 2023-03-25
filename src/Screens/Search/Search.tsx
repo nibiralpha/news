@@ -60,7 +60,7 @@ function Search() {
     }
 
     const fetchMore = async () => {
-        let newNes = await getNews(
+        let newNews = await getNews(
             {
                 section: 'news',
                 q: searchInputVal.current,
@@ -71,7 +71,7 @@ function Search() {
             }
         );
         setPage(page + 1)
-        dispatch(getTopNewsSuccess({ ...data, results: [...data.results, ...newNes.results] }))
+        dispatch(getTopNewsSuccess({ ...data, results: [...data.results, ...newNews.results] }))
     }
 
     if (loading) {

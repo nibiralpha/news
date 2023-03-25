@@ -43,7 +43,7 @@ export const searchSlice = createSlice({
         getTopNewsSuccess: (state, action: PayloadAction<NewsListResponse>) => {
             return { ...state, error: false, data: { ...action.payload } }
         },
-        getTopNewsFailed: (state, action: any) => {
+        getTopNewsFailed: (state, action: PayloadAction<object>) => {
             return { ...state, error: true, errorResponse: { ...action.payload } }
         }
     },
