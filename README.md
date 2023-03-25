@@ -16,9 +16,7 @@ Create a new file .env and copy everything from .env.example to .env file. A dem
 ```npm run install```\
 ```npm run start```
 
-To build the project run\
+For production build run\
 ```npm run build```
-
-### `npm start`
 
 Browse http://localhost:3000
