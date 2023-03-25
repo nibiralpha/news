@@ -21,5 +21,6 @@ For production build run\
 
 Browse http://localhost:3000
 
-Live url/
-https://main--news-peaks.netlify.app/search
+Live url
+
+https://main--news-peaks.netlify.app/
