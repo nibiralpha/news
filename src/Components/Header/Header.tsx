@@ -41,7 +41,7 @@ const Header = (props: Props) => {
           <div className={styles.logo}>
             <Link to="/">
               {" "}
-              <img src="/Logo_White.png"></img>
+              <img src="/logo_white.png"></img>
             </Link>
           </div>
           <div className={styles.searchArea}>

@@ -22,7 +22,7 @@ const NewsCard = (props: Props) => {
         <img
           className={styles.image}
           alt="news"
-          src={img !== "" && img !== undefined ? img : "/thumb.jpg"}
+          src={img !== "" && img !== undefined ? img : "/thumb-logo.jpg"}
         ></img>
       </div>
       <div className={styles.content}>
