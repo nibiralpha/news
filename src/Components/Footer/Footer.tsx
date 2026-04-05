@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from 'react';
-import Bar from '../Bar/Bar';
 import styles from './Footer.module.css'
 
 interface Props {
