@@ -1,3 +1,8 @@
+Live url
+
+
+https://main--news-peaks.netlify.app/
+
 # Tech Stack
 
 React JS\
@@ -20,8 +25,3 @@ For production build run\
 ```npm run build```
 
 Browse http://localhost:3000
-
-Live url
-
-
-https://main--news-peaks.netlify.app/
