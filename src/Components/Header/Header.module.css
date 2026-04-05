@@ -1,28 +1,25 @@
 .headerContainer {
-    width: 100%;
-    background: #000;
-    padding: 30px 0;
+  width: 100%;
+  background: #000;
+  padding: 30px 0;
 }
 
-.logo{
-    height: 100px;
+.logo {
+  height: 100px;
 }
 
-.logo img{
-    width: 135px;
+.logo img {
+  width: 135px;
 }
 
-.searchArea{
-    position: absolute;
-    bottom: 0;
-    right: 0;
+.searchArea {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 @media only screen and (min-width: 33.75em) {
-
-    /* 540px */
-    .logo{
-        height: auto;
-    }
-    
+  .logo {
+    height: auto;
   }
+}
