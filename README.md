@@ -1,7 +1,7 @@
 Live url
 
 
-https://main--news-peaks.netlify.app/
+https://news-peaks.netlify.app/
 
 # Tech Stack
 
