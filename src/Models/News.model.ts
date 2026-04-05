@@ -3,7 +3,6 @@ interface Fields {
     body: string,
     thumbnail: string
 }
-
 interface NewsModel {
     apiUrl: string,
     id: string,
