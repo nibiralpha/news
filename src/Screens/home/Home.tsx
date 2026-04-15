@@ -69,131 +69,129 @@ function Home() {
 
   return (
     <>
-      <>
-        <div className="App">
-          <div className={`mb-30 mt-50 flex filter-area`}>
-            <div>
-              <h1>Top stories</h1>
-            </div>
-            <div>
-              <SelectInput
-                selected={sort}
-                onSelect={(e) => {
-                  dispatch(setSort(e.target.value));
-                }}
-              />
-            </div>
+      <div className="App">
+        <div className={`mb-30 mt-50 flex filter-area`}>
+          <div>
+            <h1>Top stories</h1>
           </div>
-          <div className="row">
-            <div className={`col-6 col-sm-12 top-news`}>
-              <Card barColor="green">
-                <NewsCard
-                  id={news.topNews?.results[0]?.id}
-                  img={news.topNews?.results[0]?.fields?.thumbnail}
-                  height="423px"
-                  title={news.topNews?.results[0]?.webTitle}
-                  body={news.topNews?.results[0]?.fields?.body}
-                />
-              </Card>
-            </div>
+          <div>
+            <SelectInput
+              selected={sort}
+              onSelect={(e) => {
+                dispatch(setSort(e.target.value));
+              }}
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className={`col-6 col-sm-12 top-news`}>
+            <Card barColor="green">
+              <NewsCard
+                id={news.topNews?.results[0]?.id}
+                img={news.topNews?.results[0]?.fields?.thumbnail}
+                height="423px"
+                title={news.topNews?.results[0]?.webTitle}
+                body={news.topNews?.results[0]?.fields?.body}
+              />
+            </Card>
+          </div>
 
-            <div className="col-6 col-sm-12">
-              <div className="row">
-                <div className={`col-6 main-section-grid`}>
-                  <Card barColor="red">
-                    <NewsCard
-                      overlayStyle={{ minHeight: "106px" }}
-                      id={news.topNews?.results[1]?.id}
-                      img={news.topNews?.results[1]?.fields?.thumbnail}
-                      height="252px"
-                      textSize="sm"
-                      title={news.topNews?.results[1]?.webTitle}
-                    />
-                  </Card>
-                </div>
+          <div className="col-6 col-sm-12">
+            <div className="row">
+              <div className={`col-6 main-section-grid`}>
+                <Card barColor="red">
+                  <NewsCard
+                    overlayStyle={{ minHeight: "106px" }}
+                    id={news.topNews?.results[1]?.id}
+                    img={news.topNews?.results[1]?.fields?.thumbnail}
+                    height="252px"
+                    textSize="sm"
+                    title={news.topNews?.results[1]?.webTitle}
+                  />
+                </Card>
+              </div>
 
-                <div className={`col-6 main-section-grid`}>
-                  <Card barColor="amber">
-                    <NewsCard
-                      overlayStyle={{ minHeight: "106px" }}
-                      id={news.topNews?.results[2]?.id}
-                      img={news.topNews?.results[2]?.fields?.thumbnail}
-                      height="252px"
-                      textSize="sm"
-                      title={news.topNews?.results[2]?.webTitle}
-                    />
-                  </Card>
-                </div>
+              <div className={`col-6 main-section-grid`}>
+                <Card barColor="amber">
+                  <NewsCard
+                    overlayStyle={{ minHeight: "106px" }}
+                    id={news.topNews?.results[2]?.id}
+                    img={news.topNews?.results[2]?.fields?.thumbnail}
+                    height="252px"
+                    textSize="sm"
+                    title={news.topNews?.results[2]?.webTitle}
+                  />
+                </Card>
+              </div>
 
-                <div className={`col-6 main-section-grid`}>
-                  <Card barColor="blue">
-                    <TitleCard
-                      id={news.topNews?.results[3]?.id}
-                      style={{ height: "150px" }}
-                      textSize="sm"
-                      title={news.topNews?.results[3]?.webTitle}
-                    />
-                  </Card>
-                </div>
+              <div className={`col-6 main-section-grid`}>
+                <Card barColor="blue">
+                  <TitleCard
+                    id={news.topNews?.results[3]?.id}
+                    style={{ height: "150px" }}
+                    textSize="sm"
+                    title={news.topNews?.results[3]?.webTitle}
+                  />
+                </Card>
+              </div>
 
-                <div className={`col-6 main-section-grid`}>
-                  <Card barColor="green">
-                    <TitleCard
-                      id={news.topNews?.results[4]?.id}
-                      style={{ height: "150px" }}
-                      textSize="sm"
-                      title={news.topNews?.results[4]?.webTitle}
-                    />
-                  </Card>
-                </div>
+              <div className={`col-6 main-section-grid`}>
+                <Card barColor="green">
+                  <TitleCard
+                    id={news.topNews?.results[4]?.id}
+                    style={{ height: "150px" }}
+                    textSize="sm"
+                    title={news.topNews?.results[4]?.webTitle}
+                  />
+                </Card>
               </div>
             </div>
           </div>
-
-          <div className={`row categories-section`}>
-            {news.topNews.results.slice(5, 8).map((item: NewsModel) => {
-              return (
-                <div className="col-4 col-8-sm-12">
-                  <Card barColor="red">
-                    <NewsCard
-                      overlayStyle={{ minHeight: "156px" }}
-                      id={news.topNews?.results[5]?.id}
-                      img={item.fields?.thumbnail}
-                      height="347px"
-                      textSize="sm"
-                      title={item.webTitle}
-                      body={item?.fields?.body}
-                    />
-                  </Card>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="mb-30 mt-30">
-            <h1>Sports</h1>
-          </div>
-          <div className={`row categories-section`}>
-            {news.sports.results.map((item: NewsModel) => {
-              return (
-                <div className="col-4 col-8-sm-12">
-                  <Card barColor="red">
-                    <NewsCard
-                      overlayStyle={{ minHeight: "156px" }}
-                      id={item.id}
-                      img={item.fields?.thumbnail}
-                      height="347px"
-                      textSize="sm"
-                      title={item.webTitle}
-                      body={item?.fields?.body}
-                    />
-                  </Card>
-                </div>
-              );
-            })}
-          </div>
         </div>
-      </>
+
+        <div className={`row categories-section`}>
+          {news.topNews.results.slice(5, 8).map((item: NewsModel) => {
+            return (
+              <div className="col-4 col-8-sm-12">
+                <Card barColor="red">
+                  <NewsCard
+                    overlayStyle={{ minHeight: "156px" }}
+                    id={news.topNews?.results[5]?.id}
+                    img={item.fields?.thumbnail}
+                    height="347px"
+                    textSize="sm"
+                    title={item.webTitle}
+                    body={item?.fields?.body}
+                  />
+                </Card>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mb-30 mt-30">
+          <h1>Sports</h1>
+        </div>
+        <div className={`row categories-section`}>
+          {news.sports.results.map((item: NewsModel) => {
+            return (
+              <div className="col-4 col-8-sm-12">
+                <Card barColor="red">
+                  <NewsCard
+                    overlayStyle={{ minHeight: "156px" }}
+                    id={item.id}
+                    img={item.fields?.thumbnail}
+                    height="347px"
+                    textSize="sm"
+                    title={item.webTitle}
+                    body={item?.fields?.body}
+                  />
+                </Card>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </>
   );
 }
