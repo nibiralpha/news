@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { NewsDetailResponse } from "../../Models/Response.model";
 import { getNewsById } from "../../Service/News";
 import styles from "./Artical.module.css";
@@ -31,7 +30,6 @@ function Artical() {
   const { id } = useParams();
   const [data, setData] = useState<NewsDetailResponse>(defaultState);
   const [loading, setLoading] = useState<boolean>(false);
-  //   const search = useSelector((state: any) => state.searchSlice.query);
 
   useEffect(() => {
     if (id !== undefined) {
