@@ -14,21 +14,11 @@ const Header = (props: Props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const search = useSelector((state: any) => state.searchSlice.query);
-  let timer: any = null;
 
   const onChangeSearch = (e: string) => {
     dispatch(setQuery(e));
     navigate(`/search`);
   };
-
-  const navigateRoute = useCallback(() => {
-    if (timer !== undefined) {
-      clearTimeout(timer);
-    }
-    timer = setTimeout(() => {
-      navigate(`/search`);
-    }, 1000);
-  }, []);
 
   const onClickOutside = () => {
     dispatch(setQuery(""));
