@@ -63,15 +63,13 @@ input[type="submit"]:hover {
 
 input::placeholder {
   color: #fff;
-  opacity: 0.5; /* Firefox */
+  opacity: 0.5;
 }
 
 input:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: #fff;
 }
 
 input::-ms-input-placeholder {
-  /* Microsoft Edge */
   color: #fff;
 }
