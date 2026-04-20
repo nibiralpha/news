@@ -1,6 +1,5 @@
 import React from "react";
 import useOnClickOutside from "../../Hooks/useClickOutside";
-import Bar from "../Bar/Bar";
 import styles from "./SearchInput.module.css";
 
 interface Props {
