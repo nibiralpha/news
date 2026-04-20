@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SearchInput from "../SearchInput/SearchInput";
 import styles from "./Header.module.css";
